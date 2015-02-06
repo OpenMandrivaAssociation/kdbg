@@ -1,6 +1,6 @@
 Name:		kdbg
 Version:		2.5.2
-Release:		1
+Release:		2
 License:	 	GPLv2+
 Summary:		A Graphical Debugger Interface
 URL:		http://www.kdbg.org
