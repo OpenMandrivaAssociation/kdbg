@@ -1,11 +1,13 @@
 Name:		kdbg
-Version:		2.5.2
-Release:		2
-License:	 	GPLv2+
-Summary:		A Graphical Debugger Interface
+Version:	2.5.5
+Release:	1
+License: 	GPLv2+
+Summary:	A Graphical Debugger Interface
 URL:		http://www.kdbg.org
 Group:		Development/Other
-Source:		http://downloads.sourceforge.net/kdbg/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/kdbg/%{name}-%{version}.tar.gz
+Patch0:		kdbg-post-2.5.5-changes.patch
+Patch1:		kdbg-2.5.5-ignore-gdb-newlines.patch
 BuildRequires:	kdelibs4-devel
 Requires:	gdb
 
@@ -16,6 +18,8 @@ inspecting variables, and stepping through code.
 
 %prep
 %setup -q
+%apply_patches
+sed -i -e '/CheckFunctionExists/iinclude(CheckIncludeFiles)' kdbg/CMakeLists.txt
 
 %build
 %cmake_kde4
