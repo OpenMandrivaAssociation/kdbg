@@ -29,14 +29,13 @@ inspecting variables, and stepping through code.
 %setup -q
 %apply_patches
 sed -i -e '/CheckFunctionExists/iinclude(CheckIncludeFiles)' kdbg/CMakeLists.txt
+%cmake_kde5
 
 %build
-%cmake_kde4
-%make
+%ninja_build -C build
 
 %install
-rm -fr %{buildroot}
-%makeinstall_std -C build
+%ninja_install -C build
 
 %find_lang %{name} --with-html
 
