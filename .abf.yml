@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kdbg-2.5.5.tar.gz: 178ce7393023da4b4ec65864ed4b90bd6c17e0ea
+sources:
+  kdbg-3.0.0.tar.gz: 74405ca81c0d5969b71ee0458680c465b2fba4c7

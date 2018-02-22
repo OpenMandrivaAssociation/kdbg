@@ -1,14 +1,23 @@
 Name:		kdbg
-Version:	2.5.5
+Version:	3.0.0
 Release:	1
 License: 	GPLv2+
 Summary:	A Graphical Debugger Interface
 URL:		http://www.kdbg.org
 Group:		Development/Other
 Source0:	http://downloads.sourceforge.net/kdbg/%{name}-%{version}.tar.gz
-Patch0:		kdbg-post-2.5.5-changes.patch
 Patch1:		kdbg-2.5.5-ignore-gdb-newlines.patch
-BuildRequires:	kdelibs4-devel
+BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(Qt5)
+BuildRequires:	cmake(Qt5Core)
+BuildRequires:	cmake(Qt5Gui)
+BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	cmake(KF5I18n)
+BuildRequires:	cmake(KF5Config)
+BuildRequires:	cmake(KF5IconThemes)
+BuildRequires:	cmake(KF5XmlGui)
+BuildRequires:	cmake(KF5WindowSystem)
+BuildRequires:	cmake(KF5)
 Requires:	gdb
 
 %description
@@ -32,11 +41,12 @@ rm -fr %{buildroot}
 %find_lang %{name} --with-html
 
 %files -f %{name}.lang
-%{_kde_bindir}/%{name}
-%{_kde_datadir}/config/kdbgrc
-%{_kde_datadir}/applications/kde4/%{name}.desktop
-%{_kde_datadir}/apps/%{name}
-
+%{_kde5_bindir}/%{name}
+%{_sysconfdir}/xdg/kdbgrc
+%{_kde5_datadir}/applications/%{name}.desktop
+%{_kde5_datadir}/%{name}
+%{_kde5_datadir}/kxmlgui5/%{name}
+%{_iconsdir}/*/*/*/%{name}.*
 
 %changelog
 * Tue Oct 09 2012 Giovanni Mariani <mc2374@mclink.it> 2.5.2-1
