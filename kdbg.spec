@@ -27,7 +27,7 @@ inspecting variables, and stepping through code.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 sed -i -e '/CheckFunctionExists/iinclude(CheckIncludeFiles)' kdbg/CMakeLists.txt
 %cmake_kde5
 
