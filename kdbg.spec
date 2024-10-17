@@ -3,7 +3,7 @@ Version:	3.1.0
 Release:	1
 License: 	GPLv2+
 Summary:	A Graphical Debugger Interface
-URL:		http://www.kdbg.org
+URL:		https://www.kdbg.org
 Group:		Development/Other
 Source0:	http://downloads.sourceforge.net/kdbg/%{name}-%{version}.tar.gz
 Patch1:		kdbg-2.5.5-ignore-gdb-newlines.patch
