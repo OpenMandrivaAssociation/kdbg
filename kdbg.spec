@@ -1,5 +1,5 @@
 Name:		kdbg
-Version:	3.1.0
+Version:	3.2.0
 Release:	1
 License: 	GPLv2+
 Summary:	A Graphical Debugger Interface

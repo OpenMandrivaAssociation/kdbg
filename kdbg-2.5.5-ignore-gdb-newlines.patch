@@ -1,10 +1,12 @@
---- kdbg-2.5.5/kdbg/gdbdriver.cpp.omv~	2016-10-05 00:13:46.829325926 +0200
-+++ kdbg-2.5.5/kdbg/gdbdriver.cpp	2016-10-05 00:14:09.890982929 +0200
-@@ -2262,6 +2262,7 @@ bool GdbDriver::parseChangeExecutable(co
- 	   strncmp(output, "Missing separate debuginfo", 26) == 0 ||
- 	   strncmp(output, "Try: ", 5) == 0 ||
- 	   strncmp(output, "Using host libthread_db", 23) == 0 ||
+diff --git a/kdbg/gdbdriver.cpp b/kdbg/gdbdriver.cpp
+index 9d006e8..2b5d4cf 100644
+--- a/kdbg/gdbdriver.cpp
++++ b/kdbg/gdbdriver.cpp
+@@ -2262,6 +2262,7 @@ uint GdbDriver::parseProgramStopped(const char* output, bool haveCoreFile,
+     // "Program terminated with wignal SIGSEGV"
+     // "Program received signal SIGINT" or other signal
+     // "Breakpoint..."
 +	   output[0] == '\n' ||
- 	   strncmp(output, "(no debugging symbols found)", 28) == 0)
-     {
- 	// this line is good, go to the next one
+     // GDB since 7.3 prints
+     // "[Inferior 1 (process 13400) exited normally]"
+     // "[Inferior 1 (process 14698) exited with code 01]"
